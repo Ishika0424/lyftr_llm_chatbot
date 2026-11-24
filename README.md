@@ -6,10 +6,10 @@ A resilient, production-ready full-stack AI chatbot built with **React**, **Fast
 
 ## 1. Live URLs
 
-- **Frontend Application**: `https://lyftr-llm-frontend.onrender.com`
-- **Backend API**: `https://lyftr-llm-backend-02br.onrender.com`
-  - **Health Check**: `https://lyftr-llm-backend-02br.onrender.com/health`
-  - **API Documentation (Swagger UI)**: `https://lyftr-llm-backend-02br.onrender.com/docs`
+- 🌐 **Live Frontend Application**: [https://lyftr-llm-frontend.onrender.com](https://lyftr-llm-frontend.onrender.com)
+- ⚙️ **Live Backend API**: [https://lyftr-llm-backend-02br.onrender.com](https://lyftr-llm-backend-02br.onrender.com)
+  - **Health Check**: [https://lyftr-llm-backend-02br.onrender.com/health](https://lyftr-llm-backend-02br.onrender.com/health)
+  - **API Documentation (Swagger UI)**: [https://lyftr-llm-backend-02br.onrender.com/docs](https://lyftr-llm-backend-02br.onrender.com/docs)
 
 ---
 
