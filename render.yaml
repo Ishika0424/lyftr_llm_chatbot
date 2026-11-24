@@ -9,19 +9,15 @@ services:
     region: oregon
     envVars:
       - key: LLM_API_KEYS
-        sync: false
+        value: "mock_key_1,mock_key_2"
       - key: DATABASE_URL
-        value: sqlite:////data/app.db
+        value: sqlite:///./app.db
       - key: ALLOWED_ORIGINS
         value: "*"
       - key: ENABLE_FAILURE_SIMULATION
         value: "true"
       - key: DEFAULT_MODEL
         value: gemini/gemini-2.0-flash
-    disk:
-      name: lyftr-sqlite-data
-      mountPath: /data
-      sizeGB: 1
 
   # Frontend React Static Site
   - type: web
@@ -31,4 +27,4 @@ services:
     staticPublishPath: ./frontend/dist
     envVars:
       - key: VITE_BACKEND_URL
-        sync: false
+        value: https://lyftr-llm-backend.onrender.com
