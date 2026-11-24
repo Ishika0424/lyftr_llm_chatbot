@@ -21,8 +21,8 @@ Make sure Docker and Docker Compose are installed and running.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/twinklea1009/lyftr-llm-chatbot.git
-cd lyftr-llm-chatbot
+git clone https://github.com/Ishika0424/lyftr_llm_chatbot.git
+cd lyftr_llm_chatbot
 
 # 2. Configure environment variables
 cp .env.example .env
