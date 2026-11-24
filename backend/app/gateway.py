@@ -10,6 +10,7 @@ from litellm.caching.caching import Cache
 
 from app.config import settings
 from app.models import ChatResponseMetadata
+from app.smart_responder import resolve_smart_response
 
 logger = logging.getLogger("uvicorn.error")
 
@@ -115,19 +116,12 @@ class LLMGateway:
                 is_unit_test = hasattr(litellm.acompletion, "assert_called") or "unittest" in type(litellm.acompletion).__module__
 
                 if is_mock_key and not is_unit_test:
+                    reply = resolve_smart_response(messages)
                     last_user = ""
                     for m in reversed(messages):
                         if m.get("role") == "user":
                             last_user = m.get("content", "")
                             break
-                    if "capital of France" in last_user:
-                        reply = "The capital of France is Paris."
-                    elif "quantum" in last_user.lower():
-                        reply = "Quantum computing uses superposition and entanglement to solve complex problems exponentially faster."
-                    elif "name" in last_user.lower() and "alex" in str(messages).lower():
-                        reply = "Your name is Alex!"
-                    else:
-                        reply = f"Response from {model} (Key {key_id}): Received your message '{last_user}'."
                     input_tokens = len(last_user.split()) + 32
                     output_tokens = len(reply.split())
                 else:
